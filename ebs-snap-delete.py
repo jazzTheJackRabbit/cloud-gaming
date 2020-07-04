@@ -17,7 +17,8 @@ def lambda_handler(object, context):
     def get_target_volumes():
         # Get all available volumes
         volumes = ec2.describe_volumes(Filters=[
-            {'Name': 'tag:Name', 'Values': [GAMING_INSTANCE_NAME]}
+            {'Name': 'tag:Name', 'Values': [GAMING_INSTANCE_NAME]},
+            {'Name': 'status', 'Values': ['available']}
         ])['Volumes']
 
         # Get all volumes for the given instance
@@ -141,6 +142,3 @@ def lambda_handler(object, context):
 
     # Delete the volumes
     delete_volumes(volumes_to_delete)
-
-
-lambda_handler(None, None)
