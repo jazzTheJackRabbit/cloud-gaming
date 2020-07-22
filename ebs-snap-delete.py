@@ -4,7 +4,7 @@ import botocore
 SNAP_DELETE_TAG = 'SnapAndDelete'
 GAMING_INSTANCE_NAME = 'moge-gaming-rig'
 GAMING_INSTANCE_REGION = 'us-west-2'
-GAMING_INSTANCE_SIZE_GB = 100
+GAMING_INSTANCE_SIZE_GB = 300
 
 
 def lambda_handler(object, context):
