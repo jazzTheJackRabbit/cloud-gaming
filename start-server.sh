@@ -2,7 +2,7 @@
 
 GAMING_INSTANCE_NAME="moge-gaming-rig"
 LAUNCH_TEMPLATE_ID="lt-03fdabb49553e73e8"
-LAUNCH_TEMPLATE_VERSION="2"
+LAUNCH_TEMPLATE_VERSION="3"
 
 echo "aws ec2 describe-images --filters Name=name,Values="$GAMING_INSTANCE_NAME" --output text --query 'Images[*].{ID:ImageId}'"
 ami=$(aws ec2 describe-images --filters Name=name,Values="$GAMING_INSTANCE_NAME" --output text --query 'Images[*].{ID:ImageId}')
